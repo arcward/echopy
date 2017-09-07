@@ -99,7 +99,7 @@ class ASKResponse(_ASKObject):
 
     def reprompt(self, speech, ssml=False):
         """Set *response['reprompt']*"""
-        self.response.reprompt = self._speech(speech, ssml)
+        self.response.reprompt = { 'outputSpeech' : self._speech(speech, ssml) }
         return self
 
     @staticmethod
